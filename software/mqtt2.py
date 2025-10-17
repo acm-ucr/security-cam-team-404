@@ -10,10 +10,11 @@ def on_message(client, userdata, msg):
     print(f"Received message: {msg.payload.decode()} on topic: {msg.topic}")
 
 client = mqtt.Client()
-client.on_message = on_message
-
 client.connect(broker, port, 60)
 client.subscribe(topic)
+# while True:
+#     client.on_message = on_message(client, userdata=None, msg=None)
 
+client.on_message = on_message
 print(f"Subscribed to {topic}. Waiting for messages...")
 client.loop_forever()
