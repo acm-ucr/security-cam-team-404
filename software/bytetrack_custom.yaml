@@ -1,0 +1,16 @@
+# bytetrack_custom.yaml
+tracker_type: bytetrack
+
+# Detection thresholds
+track_high_thresh: 0.7       # start tracking if conf ≥ 0.7
+track_low_thresh: 0.1        # keep tracking even when confidence dips
+new_track_thresh: 0.7
+
+# Tracking behavior
+track_buffer: 40             # number of frames to keep a lost track alive
+match_thresh: 0.8            # IOU match threshold
+frame_rate: 30
+
+# NEW fields required by ultralytics >= 8.3.200
+fuse_score: True             # combines confidence + IOU for tracking decisions
+mot20: False                 # disable MOT20 mode unless you're using that dataset
