@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['animal', 'bicycle', 'package', 'person', 'vehicle']
+
+roboflow:
+  workspace: acmforge-pck7v
+  project: security-camera-2-3ay5k
+  version: 1
+  license: MIT
+  url: https://universe.roboflow.com/acmforge-pck7v/security-camera-2-3ay5k/dataset/1
