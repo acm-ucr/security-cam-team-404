@@ -1,16 +1,17 @@
+# mqtt_publisher.py
 import paho.mqtt.client as mqtt
 
-broker = "broker.emqx.io"
-port = 1883
-topic = "test/topic"
-
+BROKER = "broker.emqx.io"
+PORT = 1883
+TOPIC = "yolo/logs"
 
 client = mqtt.Client()
-client.connect(broker, port, 60)
+client.connect(BROKER, PORT, 60)
 
+def send_log(message: str):
+    """Send a log message to MQTT broker."""
+    client.publish(TOPIC, message)
 
-while True:
-    message = input("Enter your message: ")
-    client.publish(topic, message)
-
-client.disconnect()
+def close():
+    """Disconnect when done."""
+    client.disconnect()
