@@ -8,7 +8,6 @@ topic = "test/topic"
 client = mqtt.Client()
 client.connect(broker, port, 60)
 
-
 while True:
     message = input("Enter your message: ")
     client.publish(topic, message)

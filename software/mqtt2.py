@@ -5,6 +5,7 @@ broker = "broker.emqx.io"
 port = 1883
 topic = "test/topic"
 
+
 # Called when a message is received
 def on_message(client, userdata, msg):
     print(f"Received message: {msg.payload.decode()} on topic: {msg.topic}")

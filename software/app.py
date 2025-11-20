@@ -4,6 +4,7 @@ import time
 from ultralytics import YOLO
 from collections import deque, Counter
 
+
 def main():
     # Load model
     model = YOLO("best.pt")
@@ -51,6 +52,7 @@ def main():
             verbose=False
         )
 
+
         annotated = results[0].plot()
         cv2.imshow("YOLOv8 + ByteTrack", annotated)
 
@@ -93,3 +95,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
