@@ -125,7 +125,7 @@ const WebcamFeed = () => {
     const screenshotHistory = []
 
     function screenshotFileName(){
-      const filename = `acm-forge-cam-${ssFileNameCount}.png`;
+      let filename = `acm-forge-cam-${format(timestamp, 'yyyy-MM-dd-HHmmss')}.png`;
       ssFileNameCount++;
       return filename;
     }
